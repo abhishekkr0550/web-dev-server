@@ -22,4 +22,6 @@ userController(app);
 tuitsController(app);
 
 app.get('/', (req, res) => {res.send('Welcome to Full Stack Development!')})
+console.log("Printing port")
+console.log(process.env.PORT);
 app.listen(process.env.PORT || 4000);
