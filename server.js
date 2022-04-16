@@ -5,8 +5,15 @@ import userController from "./controllers/user-controller.js"
 import tuitsController from "./controllers/tuits-controller.js";
 import mongoose from 'mongoose';
 
-const CONNECTION_STRING = 'mongodb+srv://abhishekkr:CoffeeShop50@cluster0.sw9ff.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-    || 'mongodb://localhost:27017/webdev'
+console.log("Env test");
+console.log(process.env.REACT_APP_API_BASE)
+console.log(process.env.DB_CONNECTION_STRING)
+
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
+// const CONNECTION_STRING = 'mongodb+srv://abhishekkr:CoffeeShop50@cluster0.sw9ff.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+//     || 'mongodb://localhost:27017/webdev'
+
+
 mongoose.connect(CONNECTION_STRING);
 
 // const express = require('express');
